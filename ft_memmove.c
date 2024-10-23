@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 11:53:23 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/23 04:38:28 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/10/21 15:48:08 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/10/21 15:48:42 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strstr(char *str, char *to_find)
+
+void	*memmove(void *dest, const void *src, size_t count)
 {
-	int	i;
-	int	j;
+	char *tmp, *s;
 
-	if (to_find[0] == '\0')
-		return (str);
-	i = 0;
-	while (str[i] != '\0')
+	if (dest <= src || (src + count) <= dest)
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[i + j] == to_find[j])
-			j++;
-		if (to_find[j] == '\0')
-			return (&str[i]);
-		i++;
+		memcpy(dest, src, count);
 	}
-	return (0);
-}
+	else
+	{
+		tmp = (char *)dest + count;
+		s = (char *)src + count;
+		while (count--)
+			*--tmp = *--s;
+	}
 
+	return (dest);
+}

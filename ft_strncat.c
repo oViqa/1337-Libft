@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 11:53:23 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/23 04:38:28 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/09/04 10:51:35 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/10/23 04:38:38 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	j;
+	char	*og_dest;
 
-	if (to_find[0] == '\0')
-		return (str);
-	i = 0;
-	while (str[i] != '\0')
+	og_dest = dest;
+	while (*dest != '\0')
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[i + j] == to_find[j])
-			j++;
-		if (to_find[j] == '\0')
-			return (&str[i]);
-		i++;
+		dest++;
 	}
-	return (0);
+	while (nb > 0 && *src != '\0' )
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		nb--;
+	}
+	*dest = '\0';
+	return (og_dest);
 }
-

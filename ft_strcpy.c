@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 11:53:23 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/23 04:38:28 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/09/01 08:30:58 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/10/23 04:38:59 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strcpy(char *dest, char *src)
+
 {
-	int	i;
-	int	j;
+	char *ret_ptr;
 
-	if (to_find[0] == '\0')
-		return (str);
-	i = 0;
-	while (str[i] != '\0')
+	ret_ptr = dest;
+	while (*src != '\0')
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[i + j] == to_find[j])
-			j++;
-		if (to_find[j] == '\0')
-			return (&str[i]);
-		i++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	return (0);
+	*dest = '\0';
+	return (ret_ptr);
 }
-

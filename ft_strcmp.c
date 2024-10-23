@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 11:53:23 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/23 04:38:28 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/09/03 14:04:00 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/10/23 04:39:05 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strstr(char *str, char *to_find)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	int	j;
+	int	diff;
 
-	if (to_find[0] == '\0')
-		return (str);
+	diff = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[i + j] == to_find[j])
-			j++;
-		if (to_find[j] == '\0')
-			return (&str[i]);
+		diff += s1[i] - s2[i];
 		i++;
 	}
-	return (0);
+	return (diff + (s1[i] - s2[i]));
 }
-

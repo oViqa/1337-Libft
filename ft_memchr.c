@@ -6,7 +6,11 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:47:56 by hel-bouh          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2024/10/24 20:37:39 by hel-bouh         ###   ########.fr       */
+=======
+/*   Updated: 2024/10/21 15:48:00 by hel-bouh         ###   ########.fr       */
+>>>>>>> 0c3203845d7b0b5db3cbae7781b182490e1794df
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +26,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if ((unsigned char)c == *p++)
 		{
+<<<<<<< HEAD
 			return ((void *)(p - 1));
+=======
+			return (void *)(p - 1);
+>>>>>>> 0c3203845d7b0b5db3cbae7781b182490e1794df
 		}
 	}
 	return (NULL);

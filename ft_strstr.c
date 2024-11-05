@@ -11,7 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c3203845d7b0b5db3cbae7781b182490e1794df
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
@@ -31,3 +34,7 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0c3203845d7b0b5db3cbae7781b182490e1794df

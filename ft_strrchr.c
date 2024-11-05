@@ -11,10 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+<<<<<<< HEAD
 
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*last;
+=======
+char	*ft_strrchr(const char *s, int c)
+{
+	const char *last;
+>>>>>>> 0c3203845d7b0b5db3cbae7781b182490e1794df
 
 	last = NULL;
 	while (*s)

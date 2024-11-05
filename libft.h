@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:57:02 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 13:30:03 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/05 17:26:48 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,14 @@ int				ft_isalnum(int c);
 void			ft_bzero(void *s, size_t n);
 int				ft_isascii(int c);
 char			*ft_strrchr(const char *s, int c);
-void	ft_putnbr(int nb);
-void	ft_putstr(char const *str);
-void	ft_putendl(char const *s);
+void			ft_putnbr(int nb);
+void			ft_putstr(char const *str);
+void			ft_putendl(char const *s);
+void			*ft_calloc(size_t count, size_t size);
+char			*ft_strtrim(char const *s1, char const *set);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_itoa(int n);
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+char			**ft_split(char const *s, char c);
 #endif

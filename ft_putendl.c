@@ -6,18 +6,14 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:28:11 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 13:47:36 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:26:03 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void    ft_putendl(char const *s)
-{
-    ft_putstr(s);
-    write(1, "\n", 1);
-}
 
-int main(void)
+void	ft_putendl(char const *s)
 {
-    ft_putendl("Hello World");
+	ft_putstr(s);
+	write(1, "\n", 1);
 }

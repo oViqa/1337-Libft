@@ -6,15 +6,12 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 11:53:23 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/23 04:38:28 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:28:05 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-<<<<<<< HEAD
 
-=======
->>>>>>> 0c3203845d7b0b5db3cbae7781b182490e1794df
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
@@ -34,7 +31,3 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 0c3203845d7b0b5db3cbae7781b182490e1794df

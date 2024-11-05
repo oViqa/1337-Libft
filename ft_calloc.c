@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 14:04:00 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:29:54 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/11/05 17:04:25 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/11/05 17:48:53 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	i;
-	int	diff;
+	void	*ptr;
 
-	diff = 0;
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-	{
-		diff += s1[i] - s2[i];
-		i++;
-	}
-	return (diff + (s1[i] - s2[i]));
+	ptr = malloc(count * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

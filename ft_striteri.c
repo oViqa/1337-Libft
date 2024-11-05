@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 14:04:00 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:29:54 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/11/05 17:24:07 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/11/05 17:25:22 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
-	int	diff;
+	unsigned int	i;
 
-	diff = 0;
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	while (s[i])
 	{
-		diff += s1[i] - s2[i];
+		f(i, &s[i]);
 		i++;
 	}
-	return (diff + (s1[i] - s2[i]));
 }

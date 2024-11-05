@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/05 16:36:34 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/11/05 16:37:10 by hel-bouh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_strncpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 

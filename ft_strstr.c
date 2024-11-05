@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:47:53 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/24 20:37:10 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/09/04 11:53:23 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/10/23 04:38:28 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strstr(char *str, char *to_find)
 {
-	if (c >= 32 && 126 >= c)
-		return (1);
-	else
-		return (0);
+	int	i;
+	int	j;
+
+	if (to_find[0] == '\0')
+		return (str);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		j = 0;
+		while (to_find[j] != '\0' && str[i + j] == to_find[j])
+			j++;
+		if (to_find[j] == '\0')
+			return (&str[i]);
+		i++;
+	}
+	return (0);
 }

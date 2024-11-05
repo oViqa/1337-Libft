@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:47:53 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/24 20:37:10 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/09/04 10:51:35 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/10/23 04:38:38 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	if (c >= 32 && 126 >= c)
-		return (1);
-	else
-		return (0);
+	char	*og_dest;
+
+	og_dest = dest;
+	while (*dest != '\0')
+	{
+		dest++;
+	}
+	while (nb > 0 && *src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+		nb--;
+	}
+	*dest = '\0';
+	return (og_dest);
 }

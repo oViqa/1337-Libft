@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:47:53 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/24 20:37:10 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/10/21 15:47:56 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/10/24 20:37:39 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+// s = mem area ; c = bite to search for ; n = size
+// memchr = find a char in an area of a mem
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 32 && 126 >= c)
-		return (1);
-	else
-		return (0);
+	const unsigned char	*p = s;
+
+	while (n-- != 0)
+	{
+		if ((unsigned char)c == *p++)
+		{
+			return ((void *)(p - 1));
+		}
+	}
+	return (NULL);
 }
+
+// int main ()
+// {
+//   char  s[6] = "hello";
+//   s[6] = '\0';
+//   char c = 'e';
+//   printf("%s\n", ft_memchr(s, c, 5));
+// }

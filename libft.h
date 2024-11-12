@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: viqa <viqa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 19:57:02 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/12 14:01:04 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:24:55 by viqa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
 
 size_t			ft_strlen(const char *s);
 void			*ft_memmove(void *dest, const void *src, size_t count);
@@ -54,4 +59,6 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
+//bonus
+t_list *ft_lstnew(void *content);
 #endif

@@ -5,38 +5,73 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 17:21:01 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 17:32:55 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/11/11 11:18:46 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/11/11 12:03:31 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	count_words(const char *s, char c)
+{
+	size_t	count;
+	int		in_word;
+
+	count = 0;
+	in_word = 0;
+	while (s != NULL && *s)
+	{
+		if (*s != c && !in_word)
+		{
+			in_word = 1;
+			count++;
+		}
+		else if (*s == c)
+			in_word = 0;
+		s++;
+	}
+	return (count);
+}
+
+static char	*word_dup(const char *s, size_t start, size_t end)
+{
+	char	*word;
+	size_t	i;
+
+	word = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (start < end)
+		word[i++] = s[start++];
+	word[i] = '\0';
+	return (word);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	size_t	i;
 	size_t	j;
-	size_t	k;
+	size_t	start;
 
-	tab = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	if (!s)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	i = -1;
+	i = 0;
 	j = 0;
-	while (s[++i])
+	while (s[i])
 	{
-		if (s[i] != c)
-		{
-			k = 0;
-			tab[j] = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-			if (!tab[j])
-				return (NULL);
-			while (s[i] && s[i] != c)
-				tab[j][k++] = s[i++];
-			tab[j][k] = 0;
-			j++;
-		}
+		while (s[i] && s[i] == c)
+			i++;
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > start)
+			tab[j++] = word_dup(s, start, i);
 	}
-	return (tab[j] = 0, tab);
+	tab[j] = NULL;
+	return (tab);
 }

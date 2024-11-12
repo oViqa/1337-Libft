@@ -6,13 +6,13 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:48:03 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/10/24 21:03:13 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/12 12:11:31 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t		i;
 	char		*d;

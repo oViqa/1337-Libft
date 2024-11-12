@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 17:42:12 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:29:36 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:07:59 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 	unsigned int	i;
 	unsigned int	j;
 
+	if (size == 0 && dest == NULL)
+		return (ln((char *)src));
 	size_dest = ln(dest);
 	size_src = ln((char *)src);
 	i = 0;

@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 15:48:13 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:11:05 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/11/12 11:37:29 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/11/12 12:30:37 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(1, &c, 1);
+	if (fd < 0)
+		return ;
+	write(fd, &c, 1);
 }
+
+// int	main(void)
+// {
+// 	char	a;
+
+// 	a = 'A';
+// 	ft_putchar_fd(a, -9);
+// }

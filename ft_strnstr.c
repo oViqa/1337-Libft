@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 04:37:41 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:51:00 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:14:00 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
+	if (!big && len == 0)
+		return (NULL);
 	if (!*little)
 		return ((char *)big);
 	i = 0;

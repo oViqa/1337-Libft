@@ -33,10 +33,6 @@ SRCS = ft_isalnum.c \
        ft_strstr.c \
        ft_strcmp.c \
        ft_strlcpy.c \
-       ft_putendl.c \
-       ft_putnbr.c \
-       ft_putchar.c \
-       ft_putstr.c \
        ft_split.c \
        ft_strjoin.c \
        ft_strtrim.c \
@@ -45,6 +41,10 @@ SRCS = ft_isalnum.c \
        ft_striteri.c \
        ft_substr.c \
        ft_calloc.c	\
+       ft_putendl_fd.c \
+       ft_putnbr_fd.c \
+       ft_putchar_fd.c \
+       ft_putstr_fd.c \
 
 OBJS = $(SRCS:.c=.o)
 

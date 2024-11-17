@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:10:05 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:18:24 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:12:26 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+
+// #include "stdio.h"
+
+// int main()
+// {
+// 	const char *aaa = "wayeh";
+// 	const char *waa = "yarbi salama";
+// 	printf("%d", ft_memcmp(aaa,waa, 4));
+// }

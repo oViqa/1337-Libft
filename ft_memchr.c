@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:09:54 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:16:48 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/16 10:49:15 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (n-- != 0)
 	{
 		if ((unsigned char)c == *p++)
-		{
 			return ((void *)(p - 1));
-		}
 	}
 	return (NULL);
 }

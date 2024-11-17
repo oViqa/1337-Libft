@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:10:23 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:19:16 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/16 10:50:38 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 	char	*s;
 
 	if (dest <= src || (src + count) <= dest)
-	{
 		ft_memcpy(dest, src, count);
-	}
 	else
 	{
 		tmp = (char *)dest + count;
@@ -30,3 +28,9 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 	}
 	return (dest);
 }
+// int main()
+// {
+// 	char dest[] = "Habhouba";
+// 	const char *src = "heeuuu";
+// 	ft_memmove(dest, src, 3);
+// }

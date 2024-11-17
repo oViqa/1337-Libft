@@ -3,31 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: viqa <viqa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:06:02 by viqa              #+#    #+#             */
-/*   Updated: 2024/11/12 19:26:52 by viqa             ###   ########.fr       */
+/*   Updated: 2024/11/17 10:21:20 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-t_list *ft_lstnew(void *content)
-{
-    if(!content)
-        return(NULL);
-    t_list  *list;
-    list = malloc(sizeof(t_list));
+#include "stdio.h"
 
-    list->content = ft_strdup(content);
-    list->next = NULL;
-    return(list);
-}
-/*
-int main()
+t_list	*ft_lstnew(void *content)
 {
-    t_list *new;
-    new = ft_lstnew("hello");
-    printf("%s",(char *)new->content);
-    
+	t_list	*list;
+
+	list = malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }
-*/
+
+// int	main(void)
+// {
+// 	t_list	*new;
+
+// 	new = ft_lstnew("hello");
+// 	printf("%s",(char *)new->content);
+// }

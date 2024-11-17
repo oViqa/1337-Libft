@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 10:51:35 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:24:21 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/11/17 10:31:07 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/11/17 11:18:26 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*og_dest;
-
-	og_dest = dest;
-	while (*dest != '\0')
-	{
-		dest++;
-	}
-	while (nb > 0 && *src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-		nb--;
-	}
-	*dest = '\0';
-	return (og_dest);
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
+
+// int main()
+// {
+// 	t_list *node1 = ft_lstnew("gfgh");
+// 	t_list *node2 = ft_lstnew("vgng");
+// 	ft_lstadd_back(&node1 , node2);
+
+// 	printf("%s\n",(ft_lstlast(node1))->content);
+// }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ft_putstr_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 11:38:41 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/12 11:57:11 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:43:06 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,17 @@ void	ft_putstr_fd(char const *s, int fd)
 		return ;
 	write(fd, s, ft_strlen(s));
 }
+
+// #include <fcntl.h>
+// #include <stdio.h>
 // int main()
 // {
-// 	ft_putstr_fd("lalalalalala",-9);
+// 	int fd = open("ana_nadia.txt", O_CREAT | O_WRONLY );
+// 	if (fd == -1)
+// 	{
+// 		printf("nti machi nadia");
+// 	}
+// 	printf("%d", fd);
+// 	ft_putstr_fd("nti nadia",fd);
+// 	write(2, "test", 4);
 // }

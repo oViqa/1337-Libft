@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 11:53:23 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/05 16:28:05 by hel-bouh         ###   ########.fr       */
+/*   Created: 2024/11/17 17:06:33 by hel-bouh          #+#    #+#             */
+/*   Updated: 2024/11/18 18:36:57 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(char *str, char *to_find)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-	int	j;
-
-	if (to_find[0] == '\0')
-		return (str);
-	i = 0;
-	while (str[i] != '\0')
+	if (lst == NULL || f == NULL)
+		return ;
+	while (lst != NULL)
 	{
-		j = 0;
-		while (to_find[j] != '\0' && str[i + j] == to_find[j])
-			j++;
-		if (to_find[j] == '\0')
-			return (&str[i]);
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (0);
 }
+// void print_content(void *content)
+// {
+//     printf("%s\n", (char *)content);
+// }
+
+// int main()
+// {
+// 	t_list *lst = ft_lstnew("lala");
+
+// 	ft_lstadd_back(&lst, ft_lstnew("morah"));
+// 	ft_lstadd_back(&lst, ft_lstnew("li morahhhh"));
+// 	ft_lstiter(lst, print_content);
+// }

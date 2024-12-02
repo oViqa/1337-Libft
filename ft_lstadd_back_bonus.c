@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:34:15 by viqa              #+#    #+#             */
-/*   Updated: 2024/11/17 10:27:17 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:54:02 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	new_lst = *lst;
 	i = 0;
+	if (!lst || !new)
+		return ;
 	if (*lst == NULL)
 	{
 		*lst = new;

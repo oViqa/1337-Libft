@@ -6,7 +6,7 @@
 /*   By: hel-bouh <hel-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:04:25 by hel-bouh          #+#    #+#             */
-/*   Updated: 2024/11/17 11:20:43 by hel-bouh         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:48:23 by hel-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
+	if (count && (count * size) / count != size)
+		return (NULL);
 	ptr = malloc(count * size);
 	if (ptr == NULL)
 		return (NULL);
